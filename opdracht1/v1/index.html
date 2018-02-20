@@ -1,16 +1,40 @@
+<!DOCTYPE html>
 <html>
-  <head></head>
-  <body>
-    <p>
-      Hier komt de HTML van de interactieve demo te staan voor de eerste opdracht:
-      Ontwerp een user interface voor een gegeven use case.
-      Werk je ontwerp uit in HTML, CSS en Javascript om te kunnen testen in een browser.
-    </p>
-    <ol>
-      <li>Als ik een lijst films heb gevonden, wil ik leuke films kunnen opslaan om ze thuis te ...</li>
-      <li>In een lijst gevonden studentenhuizen wil ik details kunnen bekijken om te bepalen of de kamer geschikt is.</li>
-      <li>In een verzameling muzieknummers wil ik de volgorde kunnen veranderen om een vette playlist te maken.</li>
-      <li>Als ik foto's zoek wil ik kunnen selecteren op kleur om verassende zoekresultaten te krijgen.</li>
-    </ol>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Week 1: Frontend voor Designers</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+	</head>
+
+	<body>
+		<div id="floatingheader" class="transitiondown">
+			<h1>Filter foto's op kleur</h1>
+
+			<div id="colorbuttons">
+				<!--<div id="showall"><a>Show All</a></div>-->
+				<div class="colorsquare" id="bluebutton"></div>
+				<div class="colorsquare" id="redbutton"></div>
+				<div class="colorsquare" id="greenbutton"></div>
+				<div class="colorsquare" id="yellowbutton"></div>
+			</div>
+		</div>
+
+		<div id="imagesection">
+			<h2 id="buttonfeedback">Kleuren geselecteerd: </h2>
+			<img src="images/blue2.jpg" class="imagesquare blue hidden">
+			<img src="images/yellow2.jpg" class="imagesquare yellow hidden">
+			<img src="images/blue3.jpg" class="imagesquare blue hidden">
+			<img src="images/green2.jpg" class="imagesquare green hidden">
+			<img src="images/blue4.jpg" class="imagesquare blue hidden">
+			<img src="images/red3.jpg" class="imagesquare red hidden">
+			<img src="images/green3.jpg" class="imagesquare green hidden">
+			<img src="images/red4.jpg" class="imagesquare red hidden">
+			<img src="images/green4.jpg" class="imagesquare green hidden">
+			<img src="images/yellow3.jpg" class="imagesquare yellow hidden">
+			<img src="images/red2.jpg" class="imagesquare red hidden">
+			<img src="images/yellow4.jpg" class="imagesquare yellow hidden">
+		</div>
+	</body>
+	<script src="js.js"></script>
 </html>
