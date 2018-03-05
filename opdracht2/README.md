@@ -18,4 +18,5 @@ De popup kan door middel van een onmouseover weggehaald worden. De onmouseover i
 [preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht2/v1/images/popup_preview.png "Preview pop-up v1"
 
 Preview van de pop-up: 
+
 ![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht2/images/popup_preview.png "Preview pop-up v1")
