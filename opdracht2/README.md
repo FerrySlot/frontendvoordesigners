@@ -16,3 +16,6 @@ Oftewel, als de timer NIET wordt gereset (geen beweging dus), komt de pop-up naa
 De popup kan door middel van een onmouseover weggehaald worden. De onmouseover is gelinkt met de "No Thanks" button onderin de pop-up.
 
 [preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht2/v1/images/popup_preview.png "Preview pop-up v1"
+
+Preview van de pop-up: 
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht2/images/popup_preview.png "Preview pop-up v1")
