@@ -1,0 +1,135 @@
+
+
+/*.   Layout Css.   */
+*
+{
+	box-sizing: border-box;
+	margin: 0;
+}
+
+h1
+{
+	text-align: center;
+	padding-bottom: 50px;
+	border-bottom: solid #777;
+	border-width: 1px;
+	color: #fafafa;
+}
+
+body
+{
+	background-color: #fafafa;
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-weight: 100;
+}
+
+#popupoverlay
+{
+	position: fixed;
+	background-color: rgba(0,0,0,0.4);
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	transition: 1s;
+	transition-timing-function: linear;
+}
+
+#notmovingpopup
+{
+	position: fixed;
+	width: 600px;
+	height: 600px;
+	background: #fff;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px; 
+	margin-left: -300px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 100px rgba(0,0,0,0.4);
+	text-align: center;
+	z-index: 10;
+}
+#notmovingpopup h2
+{
+	font-family: Heebo;
+	text-align: center;
+	padding-top: 30px;
+	text-transform: uppercase;
+	font-size: 50px;
+	font-weight: 900;
+	z-index: 10;
+}
+#notmovingpopup p
+{
+	font-family: Heebo;
+	text-align: center;
+	padding: 30px;
+	line-height: 36px;
+	font-size: 18px;
+	font-weight: 100;
+	z-index: 10;
+}
+#yesplease
+{
+	display:block;
+	width: 300px;
+	height: 76px;
+	line-height: 76px;
+	vertical-align: middle;
+	border-radius: 38px;
+	background-color: #B0DB43;
+	text-align: center;
+	color: #fff;
+	margin: 0 auto;
+	opacity: 1;
+	z-index: 10;
+}
+#yesplease:hover
+{
+	background-color: #c9e77e;
+}
+
+#removepopup/*nothanks*/
+{
+	display: inline;
+	color: #1f1f1f;
+	opacity: 1;
+	padding: 0px !important;
+	margin: 30px;
+	text-decoration: underline;
+	z-index: 10;
+}
+
+#removeloading
+{
+	border-radius: 10px;
+	display: block;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 0%;
+	height: 100%;
+	
+	background-color: #fafafa;
+	z-index: -1;
+}
+.removeloadingfull
+{
+	width: 100% !important;
+	transition: 1s;
+}
+
+.changecolorbutton
+{
+	/*opacity: 0 !important;*/
+	transition: 1s;
+	transition-timing-function: ease-in;
+}
+
+.hidden
+{
+	display: none;
+}
+
