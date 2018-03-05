@@ -6,7 +6,7 @@
 
 [Demo 3 voor opdracht 2](https://ferryslot.github.io/frontendvoordesigners/opdracht2/v3/)
 
-###Uitleg concept (demo 1)
+### Uitleg concept (demo 1)
 
 Een pop-up die naar X aantal seconden inactiviteit naar boven komt.
 De inactiviteit word gemeten door een javascript functie.
