@@ -2,11 +2,46 @@ var notmoving;
 var popup = document.querySelector("#popupoverlay");
 var removebutton = document.querySelector("#removepopup");
 var loadingbar = document.querySelector("#removeloading");
+var haspoppedup = 0;
+
+
+var verticalpixelsdown;
+var verticalpixelsup;
+
+document.onmousedown = beginSlide;
+document.onmouseup = endSlide;
+
+function beginSlide(event)
+{
+  	verticalpixelsdown = event.pageX;
+  	console.log(verticalpixelsdown);
+}
+
+function endSlide(event)
+{
+  	verticalpixelsup = event.pageX;
+  	console.log(verticalpixelsup);
+  	if(verticalpixelsup <= verticalpixelsdown)
+  	{
+  		clearTimeout(notmoving);
+		popup.classList.add("hidden");
+		console.log("pop-up is weg"); 
+  	}
+}
 
 document.onmousemove = function()
 {
     clearTimeout(notmoving);
-    notmoving = setTimeout( function(){ popup.classList.remove("hidden") }, 5000);
+
+    if(haspoppedup == 0)
+    {
+	    notmoving = setTimeout( function() 
+	    { 
+	    	popup.classList.remove("hidden"); 
+	    	console.log("pop-up komt");
+	    	haspoppedup = 1;
+	    }, 5000);
+	}
 }
 
 var hoverbutton;
@@ -17,7 +52,10 @@ removebutton.onmouseover = function()
 	loadingbar.classList.add("removeloadingfull");
 
 	clearTimeout(notmoving);
-	hoverbutton = setTimeout( function(){ popup.classList.add("hidden") }, 1000);
+	hoverbutton = setTimeout( function(){ 
+		popup.classList.add("hidden");
+		console.log("pop-up is weg"); 
+	}, 1000);
 }
 
 removebutton.onmouseout = function()
@@ -28,3 +66,12 @@ removebutton.onmouseout = function()
 
 	clearTimeout(hoverbutton);
 }
+
+document.onkeyup = function() 
+{ 
+	if(haspoppedup == 1)
+	{
+		haspoppedup = 0;
+		console.log("reset popup");
+	}
+};
