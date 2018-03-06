@@ -29,7 +29,7 @@ function endSlide(event)
   	}
 }
 
-document.touchstart = function()
+document.onmousemove = function()
 {
     clearTimeout(notmoving);
 

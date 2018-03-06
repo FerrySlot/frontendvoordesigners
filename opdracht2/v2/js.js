@@ -8,7 +8,7 @@ var haspoppedup = 0;
 var verticalpixelsdown;
 var verticalpixelsup;
 
-document.onmousedown = beginSlide;
+document.querySelector("#slideremove").onmousedown = beginSlide;
 document.onmouseup = endSlide;
 
 function beginSlide(event)
