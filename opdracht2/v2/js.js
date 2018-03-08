@@ -10,18 +10,16 @@ var hoverbutton;
 document.querySelector("#slideremove").onmousedown = beginSlide;
 document.onmouseup = endSlide;
 
-function beginSlide(event)
+function beginSlide(event)//mousedown
 {
-  	verticalpixelsdown = event.pageX;
-  	console.log(verticalpixelsdown);
+  	verticalpixelsdown = event.pageX; //slaat de horizontale locatie op
 }
 
-function endSlide(event)
+function endSlide(event)//mouseup
 {
   	verticalpixelsup = event.pageX;
-  	console.log(verticalpixelsup);
-    
-  	if((verticalpixelsup < verticalpixelsdown) && (haspoppedup == 1)) 
+
+  	if(((verticalpixelsup + 50) < verticalpixelsdown) && (haspoppedup == 1)) 
   	{ 
   		removePopUp();
   	}
@@ -41,7 +39,6 @@ document.onmousemove = function()
 
 removebutton.onmouseover = function()
 {
-	console.log("Hover over button?");
 	popup.classList.add("changecolorbutton");
 	loadingbar.classList.add("removeloadingfull");
 	clearTimeout(notmoving);
@@ -50,7 +47,6 @@ removebutton.onmouseover = function()
 
 removebutton.onmouseout = function()
 {
-	console.log("Hover OUT button");
 	popup.classList.remove("changecolorbutton");
 	loadingbar.classList.remove("removeloadingfull");
 	clearTimeout(hoverbutton);
@@ -70,7 +66,7 @@ function removePopUp()// haad de pop up weg
 {
   	clearTimeout(notmoving);
     popup.classList.add("hidden");
-    console.log("pop-up is weg"); 
+    document.querySelector(".content").classList.remove("blur");
 }
 
 function showPopUp()//laat de pop-up zien
@@ -78,7 +74,7 @@ function showPopUp()//laat de pop-up zien
 	if(haspoppedup == 0)//als hij nog niet opgepopt is.
 	{
    		popup.classList.remove("hidden"); 
-   		console.log("pop-up komt");
+        document.querySelector(".content").classList.add("blur");
    		haspoppedup = 1;
     }
 }
