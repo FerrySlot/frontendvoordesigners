@@ -6,23 +6,33 @@ var haspoppedup = 0;
 var verticalpixelsdown;
 var verticalpixelsup;
 var hoverbutton;
+var isDragging = 0;
 
-document.querySelector("#slideremove").onmousedown = beginSlide;
+
 document.onmouseup = endSlide;
+
+document.querySelector("#sliderhandler").onmousedown = beginSlide;
 
 function beginSlide(event)//mousedown
 {
   	verticalpixelsdown = event.pageX; //slaat de horizontale locatie op
+    //Hier moet een blokje komen left: x;
+    isDragging = 1;
 }
 
 function endSlide(event)//mouseup
 {
-  	verticalpixelsup = event.pageX;
+    if(isDragging == 1)
+    {
+      	verticalpixelsup = event.pageX;
 
-  	if(((verticalpixelsup + 50) < verticalpixelsdown) && (haspoppedup == 1)) 
-  	{ 
-  		removePopUp();
-  	}
+      	if((verticalpixelsup > (verticalpixelsdown + 500)) && (haspoppedup == 1)) 
+      	{ 
+      		removePopUp();
+      	}
+        document.querySelector("#sliderhandler").style.left = "5px";
+        isDragging = 0;
+    }
 }
 
 document.onmousemove = function()
@@ -35,6 +45,14 @@ document.onmousemove = function()
 	    	showPopUp();
 	    }, 	5000);
 	}
+    if(isDragging == 1)
+    {
+        var handlerLocation = (event.pageX - verticalpixelsdown);
+        if(handlerLocation > 545){ handlerLocation = 545; }
+        if(handlerLocation < 5){ handlerLocation = 5; }
+        console.log("isdragging = " + isDragging + " | " + event.pageX +" - "+ verticalpixelsdown + " = " + (event.pageX - verticalpixelsdown));
+        document.querySelector("#sliderhandler").style.left = handlerLocation+"px";
+    }
 }
 
 removebutton.onmouseover = function()
@@ -56,7 +74,7 @@ removebutton.onmouseout = function()
 document.onclick = function(e)
 {   
     // click buiten de popup
-    if (!document.querySelector("#notmovingpopup").contains(e.target))
+    if ((!document.querySelector("#notmovingpopup").contains(e.target)) && (isDragging == 0))
     {
         removePopUp();
     } 
@@ -86,7 +104,6 @@ function checkKey(e)
     if ((e.keyCode == '27') && (haspoppedup == 1)) //ESC key om de popup weg te halen
     {
         removePopUp();
-        console.log("remove popup");
     }
     // Klik op de R knop als je de de pop-up wilt toestaan om te komen.
     if ((e.keyCode == '82') && (haspoppedup == 1)) // R key    
