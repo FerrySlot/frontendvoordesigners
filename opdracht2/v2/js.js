@@ -30,7 +30,8 @@ function endSlide(event)//mouseup
       	{ 
       		removePopUp();
       	}
-        document.querySelector("#sliderhandler").style.left = "5px";
+        document.querySelector("#sliderhandler").style.left = "10px";
+        document.querySelector("#sliderhandler").style.backgroundColor = "#E3655B";
         isDragging = 0;
     }
 }
@@ -48,10 +49,11 @@ document.onmousemove = function()
     if(isDragging == 1)
     {
         var handlerLocation = (event.pageX - verticalpixelsdown);
-        if(handlerLocation > 545){ handlerLocation = 545; }
-        if(handlerLocation < 5){ handlerLocation = 5; }
+        if(handlerLocation > 540){ handlerLocation = 540; }
+        if(handlerLocation < 10){ handlerLocation = 10; }
         console.log("isdragging = " + isDragging + " | " + event.pageX +" - "+ verticalpixelsdown + " = " + (event.pageX - verticalpixelsdown));
         document.querySelector("#sliderhandler").style.left = handlerLocation+"px";
+        document.querySelector("#sliderhandler").style.backgroundColor = "#ed9892";
     }
 }
 
