@@ -173,6 +173,18 @@ function endSlide(event)//mouseup
         isDragging = 0;// Je hebt de knop losgelaten, je bent niet meer aan het unlocken.
     }
 }
+
+document.onmousemove = function()// Als je muis beweegt...
+{
+    if(isDragging == 1)// En je bent aan het unlocken...
+    {
+        var handlerLocation = (event.pageX - verticalpixelsdown);
+        if(handlerLocation > 540){ handlerLocation = 540; }// Zet de max op 540px dat de locker kan schuiven
+        if(handlerLocation < 10){ handlerLocation = 10; }// minimum is 10px
+        document.querySelector("#sliderhandler").style.left = handlerLocation+"px";// Verschuif de unlocker met de muis mee.
+        document.querySelector("#sliderhandler").style.backgroundColor = "#ed9892";// Verander de kleur tijdens het schuiven.
+    }
+}
 ```
 
 
