@@ -56,16 +56,27 @@ Dit was meer een test i.p.v. dat het een goede oplossing is voor een pop-up. Maa
 
 #### 1. Inactivity
 ```javascript
-document.onmousemove = function()
+document.onmousemove = function()// Bij elke beweging; voer uit...
 {
-    clearTimeout(notmoving);
-    if(haspoppedup == 0)
+    clearTimeout(notmoving);// bij elke beweging gaat de timer weer naar 5 sec
+    if(haspoppedup == 0)// als de pop-up nog niet gekomen is dan...
     {
-	    notmoving = setTimeout( function() 
+	    notmoving = setTimeout( function()// De muis staat stil, start de timer van 5 sec
 	    { 
-	    	showPopUp();
-	    }, 	5000);
+	    	showPopUp();// Als de 5 sec voorbij zijn, laat de popup zien.
+	    }, 	5000);//timer tijd
 	}
 }
 ```
-
+Pop-up laten zien:
+```javascript
+function showPopUp()//laat de pop-up zien
+{
+	if(haspoppedup == 0)//als hij nog niet opgepopt is.
+	{
+   		popup.classList.remove("hidden"); 
+        document.querySelector(".content").classList.add("blur");
+   		haspoppedup = 1;
+    }
+}
+```
