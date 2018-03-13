@@ -48,7 +48,7 @@ Door te hoveren op de "Nee Bedankt" tekst, gaat er een balk op de achtergrond va
 
 [preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht2/v1/images/neebedankt_hover.gif "Hover op nee bedankt"
 
-Preview van de pop-up: 
+Hover "Nee Bedankt" preview: 
 
 ![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht2/images/neebedankt_hover.gif "Hover op nee bedankt")
 
@@ -57,6 +57,12 @@ Tegenwoordig is dit een designpattern. Als er ergens een pop-up omhoog komt, kan
 
 #### 6. Unlock Slider
 Dit was meer een test i.p.v. dat het een goede oplossing is voor een pop-up. Maar ik vind dit wel een goede oplossing als het belangrijke informatie is. De gebruiker moet even nadenken hoe hij de pop-up weg krijgt. Hierdoor zal je iets meer aandacht krijgen voor de informatie die op de pop-up staat.
+
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht2/v1/images/unlock_slider.gif "Unlock slider"
+
+Unlock slider preview: 
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht2/images/unlock_slider.gif "Unlock slider")
 
 ## Hoe het werkt
 
