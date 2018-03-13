@@ -46,6 +46,12 @@ Door op de escape knop te klikken kan je de pop-up weghalen. De escape wordt in 
 #### 4. Hover op "Nee Bedankt"
 Door te hoveren op de "Nee Bedankt" tekst, gaat er een balk op de achtergrond van de pop-up lopen. Hierdoor creeer je een soort van bedenk tijd voor de gebruiker om de pop-up niet weg te klikken. Waarschijnlijk willen veel mensen het alsnog wegklikken, maar dan heb je toch nog 1 seconden extra van de gebruiker.
 
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht2/v1/images/neebedankt_hover.gif "Hover op nee bedankt"
+
+Preview van de pop-up: 
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht2/images/neebedankt_hover.gif "Hover op nee bedankt")
+
 #### 5. Klik buiten de pop-up
 Tegenwoordig is dit een designpattern. Als er ergens een pop-up omhoog komt, kan je er 9 van de 10 keer naast klikken om de pop-up te verwijderen.
 
@@ -144,7 +150,7 @@ function endSlide(event)//mouseup
 {
     if(isDragging == 1)//Als je aan het "unlocken" bent en je muis loslaat.
     {
-      	verticalpixelsup = event.pageX;//Slaat horizontale locatie opnieuw op
+      	verticalpixelsup = event.pageX;//Slaat horizontale locatie nog een keer op
 
       	if((verticalpixelsup > (verticalpixelsdown + 500)) && (haspoppedup == 1))//Is je muis tijdens het unlocken 500px naar rechts gegaan?
       	{ 
