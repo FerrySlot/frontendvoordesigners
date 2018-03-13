@@ -129,6 +129,32 @@ document.onclick = function(e)//Als er een muisklik is in de site
 };
 ```
 
+#### 6. Unlock Slider
+```javascript
+document.querySelector("#sliderhandler").onmousedown = beginSlide;//Als je knop ingedrukt is, voer functie uit...
+document.onmouseup = endSlide;//Als je je muisknop loslaat, voer functie uit...
 
+function beginSlide(event)//mousedown
+{
+  	verticalpixelsdown = event.pageX; //slaat de horizontale locatie op van de muis
+    isDragging = 1;// Slaat op dat je aan het "unlocken" bent.
+}
+
+function endSlide(event)//mouseup
+{
+    if(isDragging == 1)//Als je aan het "unlocken" bent en je muis loslaat.
+    {
+      	verticalpixelsup = event.pageX;//Slaat horizontale locatie opnieuw op
+
+      	if((verticalpixelsup > (verticalpixelsdown + 500)) && (haspoppedup == 1))//Is je muis tijdens het unlocken 500px naar rechts gegaan?
+      	{ 
+      		removePopUp();// Zo ja, haal de pop-up weg.
+      	}
+        document.querySelector("#sliderhandler").style.left = "10px";// Zo niet, gaat de slider terug.
+        document.querySelector("#sliderhandler").style.backgroundColor = "#E3655B";// Zo niet, verander de kleur terug
+        isDragging = 0;// Je hebt de knop losgelaten, je bent niet meer aan het unlocken.
+    }
+}
+```
 
 
