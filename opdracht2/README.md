@@ -94,3 +94,41 @@ function showPopUp()//laat de pop-up zien
     }
 }
 ```
+
+### Wanneer gaat de pop-up weg:
+#### 3. Escape
+```javascript
+document.onkeydown = checkKey;//Als er een key omlaag gaat voer functie uit...
+function checkKey(e) 
+{
+    e = e || window.event;
+    if ((e.keyCode == '27') && (haspoppedup == 1)) //27 = ESC key
+    {
+        removePopUp(); // Haalt pop-up weg
+    }
+}
+```
+
+#### 4. Hover op "Nee Bedankt"
+```javascript
+removebutton.onmouseover = function()// Als je op "Nee bedankt" hovert
+{
+	loadingbar.classList.add("removeloadingfull");//Laat het balkje lopen met CSS transition van 1s
+	hoverbutton = setTimeout( removePopUp, 1000);// Na 1s, haal de pop-up weg.
+}
+```
+
+#### 5. Klik buiten de pop-up
+```javascript
+document.onclick = function(e)//Als er een muisklik is in de site
+{   
+    if ((!document.querySelector("#notmovingpopup").contains(e.target)) && (isDragging == 0))//Als je ergens klikt wat niet de pop-up is.
+    {
+        removePopUp();//haal de pop-up weg.
+    } 
+};
+```
+
+
+
+

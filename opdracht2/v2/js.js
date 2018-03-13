@@ -61,7 +61,7 @@ removebutton.onmouseover = function()
 {
 	popup.classList.add("changecolorbutton");
 	loadingbar.classList.add("removeloadingfull");
-	clearTimeout(notmoving);
+	//clearTimeout(notmoving);
 	hoverbutton = setTimeout( removePopUp, 1000);
 }
 
