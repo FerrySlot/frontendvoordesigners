@@ -72,11 +72,11 @@ Pop-up laten zien:
 ```javascript
 function showPopUp()//laat de pop-up zien
 {
-	if(haspoppedup == 0)//als hij nog niet opgepopt is.
+	if(haspoppedup == 0)//als hij nog niet gekomen is dan...
 	{
-   		popup.classList.remove("hidden"); 
-        document.querySelector(".content").classList.add("blur");
-   		haspoppedup = 1;
+   		popup.classList.remove("hidden"); // haal display: none; weg van de pop-up
+        document.querySelector(".content").classList.add("blur");// Blur de achtergrond
+   		haspoppedup = 1;// De var om te checken of de pop-up al eens gekomen is.
     }
 }
 ```
