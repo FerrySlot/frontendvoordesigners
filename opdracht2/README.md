@@ -39,6 +39,12 @@ De pop-up komt omhoog wanneer de site registreerd dat de muis voor een X aantal 
 #### 2. Scroll
 Als de gebruiker de hoogte van t scherm naar beneden scrollt (100vh) komt de pop-up omhoog. Op deze manier kan je gebruikers aanspreken die actief bezig zijn met de website. Bijvoorbeeld, laat ze inschrijven voor een nieuwsbrief.
 
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht2/v1/images/scroll_popup.gif "scroll popup"
+
+Scroll pop up preview: 
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht2/images/scroll_popup.gif "scroll popup")
+
 ### Wanneer gaat de pop-up weg:
 #### 3. Escape
 Door op de escape knop te klikken kan je de pop-up weghalen. De escape wordt in meerdere software/website gebruikt als een soort van "cancel" knop.
