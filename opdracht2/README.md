@@ -54,6 +54,8 @@ Dit was meer een test i.p.v. dat het een goede oplossing is voor een pop-up. Maa
 
 ## Hoe het werkt
 
+### Wanneer de pop-up komt:
+
 #### 1. Inactivity
 ```javascript
 document.onmousemove = function()// Bij elke beweging; voer uit...
@@ -68,15 +70,27 @@ document.onmousemove = function()// Bij elke beweging; voer uit...
 	}
 }
 ```
+
+#### 2. Scroll
+```javascript
+window.addEventListener("scroll", function(event) {// Voer uit als je scrollt...
+    var top = this.scrollY;// afstand vanaf top
+    if (top >= window.innerHeight)// Als je de afstand van je scherm gescrollt hebt.
+    {
+    	showPopUp();// Laat de pop-up zien
+    }
+})
+```
+
 Pop-up laten zien:
 ```javascript
 function showPopUp()//laat de pop-up zien
 {
-	if(haspoppedup == 0)//als hij nog niet gekomen is dan...
+	if(haspoppedup == 0)//zorgt er voor dat het maar 1x per bezoek kan.
 	{
    		popup.classList.remove("hidden"); // haal display: none; weg van de pop-up
         document.querySelector(".content").classList.add("blur");// Blur de achtergrond
-   		haspoppedup = 1;// De var om te checken of de pop-up al eens gekomen is.
+   		haspoppedup = 1;// zorgt er voor dat het maar 1x per bezoek kan.
     }
 }
 ```
