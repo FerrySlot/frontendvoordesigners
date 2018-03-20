@@ -6,7 +6,7 @@ body
 {
 	text-align: center;
 }
-body input
+body select
 {
 	display: inline-block;
 	width: 300px;
@@ -14,8 +14,10 @@ body input
 	border-radius: 25px;
 	font-size: 20px;
 	font-family: Lato;
-	text-align: center;
 	color: #ccc;
+}
+body select option{
+	text-align: center;
 }
 body input:focus
 {
