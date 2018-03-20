@@ -9,9 +9,8 @@ var hoverbutton;
 var isDragging = 0;
 
 
-document.onmouseup = endSlide;
-
 document.querySelector("#sliderhandler").onmousedown = beginSlide;
+document.onmouseup = endSlide;
 
 function beginSlide(event)//mousedown
 {
@@ -59,7 +58,7 @@ document.onmousemove = function()
 
 removebutton.onmouseover = function()
 {
-	popup.classList.add("changecolorbutton");
+	//popup.classList.add("changecolorbutton");
 	loadingbar.classList.add("removeloadingfull");
 	//clearTimeout(notmoving);
 	hoverbutton = setTimeout( removePopUp, 1000);
@@ -67,7 +66,7 @@ removebutton.onmouseover = function()
 
 removebutton.onmouseout = function()
 {
-	popup.classList.remove("changecolorbutton");
+	//popup.classList.remove("changecolorbutton");
 	loadingbar.classList.remove("removeloadingfull");
 	clearTimeout(hoverbutton);
 }

@@ -1,0 +1,10 @@
+#movies > div{
+  width: 400px;
+  display:inline-block;
+  height: 400px;
+  overflow: scroll;
+  margin: 20px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 1px;
+}

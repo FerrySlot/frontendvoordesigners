@@ -1,0 +1,66 @@
+*
+{
+	box-sizing: border-box;
+}
+body
+{
+	text-align: center;
+}
+body input
+{
+	display: inline-block;
+	width: 300px;
+	height: 50px;
+	border-radius: 25px;
+	font-size: 20px;
+	font-family: Lato;
+	text-align: center;
+	color: #ccc;
+}
+body input:focus
+{
+	outline: none;
+	color: #000;
+}
+h1
+{
+	text-align: center;
+	font-family: Lato;
+}
+
+div#cryptodiv
+{
+	width: 900px;
+	margin: 0 auto;
+}
+
+tr
+{
+	display: inline-block;
+	width: 100%;
+}
+
+td
+{
+	display: inline-block;
+	text-align: center;
+	width: 50%;
+	font-family: Lato;
+	font-weight: 300;
+	line-height: 30px;
+	vertical-align: center;
+	height: 30px;
+	border-style: solid;
+	border-color: #ccc;
+	border-width: 1px;
+}
+
+td:nth-child(odd)
+{
+	font-weight: 700;
+}
+
+tr:nth-child(even)
+{
+	background-color: #eee;
+}
