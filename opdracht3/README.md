@@ -3,3 +3,7 @@
 [Demo 1 voor opdracht 3](https://ferryslot.github.io/frontendvoordesigners/opdracht3/v1/index.html)
 
 [Demo 2 voor opdracht 3](https://ferryslot.github.io/frontendvoordesigners/opdracht3/v2/index.html)
+
+[Demo 3 voor opdracht 3](https://ferryslot.github.io/frontendvoordesigners/opdracht3/v3/index.html)
+
+[Demo 4 voor opdracht 3](https://ferryslot.github.io/frontendvoordesigners/opdracht3/v4/index.html)
