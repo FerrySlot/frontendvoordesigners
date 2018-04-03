@@ -5,6 +5,7 @@ var requestCrypto = new XMLHttpRequest();
 requestCrypto.open('GET', requestCryptoURL);
 requestCrypto.responseType = 'json';
 requestCrypto.send();
+
 var isJSONloaded = 0;
 var selectCrypto = document.getElementById('selectcrypto');
 var cryptoResponse;

@@ -17,35 +17,6 @@ var rightProcent = 0;
 var btcProcentRight;
 var btcProcentLeft;
 
-var vergelijkButton = document.querySelector("#vergelijkButton");
-vergelijkButton.onclick = function() 
-{
-    if(rightProcent < leftProcent)
-    {
-        btcProcentLeft.style.color = "green";
-    }
-    if(rightProcent > leftProcent)
-    {
-        btcProcentLeft.style.color = "red";
-    }
-    if(rightProcent == leftProcent)
-    {
-        btcProcentLeft.style.color = "black";
-    }
-    if(rightProcent > leftProcent)
-    {
-        btcProcentRight.style.color = "green";
-    }
-    if(rightProcent < leftProcent)
-    {
-        btcProcentRight.style.color = "red";
-    }
-    if(rightProcent == leftProcent)
-    {
-        btcProcentRight.style.color = "black";
-    }
-}
-
 requestCrypto.onload = function() 
 {
     isJSONloaded = 1;
@@ -53,6 +24,7 @@ requestCrypto.onload = function()
     //console.log("Crypto respones: " + cryptoResponse);
     //showCrypto(cryptoResponse['DISPLAY'].BTC.EUR);
 }
+
 
 
 var showBTCbutton = document.querySelector("#showBTCbutton");
@@ -103,6 +75,35 @@ showLTCbutton2.onclick = function()
     showCrypto2(cryptoResponse['DISPLAY'].LTC.EUR);
 };
 
+
+var vergelijkButton = document.querySelector("#vergelijkButton");
+vergelijkButton.onclick = function() 
+{
+    if(rightProcent < leftProcent)
+    {
+        btcProcentLeft.style.color = "green";
+    }
+    if(rightProcent > leftProcent)
+    {
+        btcProcentLeft.style.color = "red";
+    }
+    if(rightProcent == leftProcent)
+    {
+        btcProcentLeft.style.color = "black";
+    }
+    if(rightProcent > leftProcent)
+    {
+        btcProcentRight.style.color = "green";
+    }
+    if(rightProcent < leftProcent)
+    {
+        btcProcentRight.style.color = "red";
+    }
+    if(rightProcent == leftProcent)
+    {
+        btcProcentRight.style.color = "black";
+    }
+}
 
 
 function showCrypto(jsonObj) 
