@@ -14,6 +14,9 @@ var BTCopenday;
 var leftProcent;
 var rightProcent;
 
+var btcProcentRight;
+var btcProcentLeft;
+
 requestCrypto.onload = function() 
 {
     isJSONloaded = 1;
@@ -94,18 +97,18 @@ function showCrypto(jsonObj)
     cryptodiv.appendChild(btcPrice);
     //btcPrive.id = h1cryptoprijs;
 
-    var btcProcent = document.createElement('h1');
-    btcProcent.innerHTML = cryptoarray.FROMSYMBOL + " procent:</br>" + cryptoarray.CHANGEPCT24HOUR;
-    cryptodiv.appendChild(btcProcent);
-    //btcProcent.id = h1cryptoprocent;
+    btcProcentLeft = document.createElement('h1');
+    btcProcentLeft.innerHTML = cryptoarray.FROMSYMBOL + " procent:</br>" + cryptoarray.CHANGEPCT24HOUR;
+    cryptodiv.appendChild(btcProcentLeft);
+    //btcProcentLeft.id = h1cryptoprocent;
 
     if(rightProcent < leftProcent)
     {
-        btcProcent.style.color = "green";
+        btcProcentLeft.style.color = "green";
     }
     if(rightProcent > leftProcent)
     {
-        btcProcent.style.color = "red";
+        btcProcentLeft.style.color = "red";
     }
 
 }
@@ -130,16 +133,16 @@ function showCrypto2(jsonObj)
     cryptodiv2.appendChild(btcPrice);
     //btcPrive.id = h1cryptoprijs;
 
-    var btcProcent = document.createElement('h1');
-    btcProcent.innerHTML = cryptoarray.FROMSYMBOL + " procent:</br>" + cryptoarray.CHANGEPCT24HOUR;
-    cryptodiv2.appendChild(btcProcent);
+    btcProcentRight = document.createElement('h1');
+    btcProcentRight.innerHTML = cryptoarray.FROMSYMBOL + " procent:</br>" + cryptoarray.CHANGEPCT24HOUR;
+    cryptodiv2.appendChild(btcProcentRight);
     if(rightProcent > leftProcent)
     {
-        btcProcent.style.color = "green";
+        btcProcentRight.style.color = "green";
     }
     if(rightProcent < leftProcent)
     {
-        btcProcent.style.color = "red";
+        btcProcentRight.style.color = "red";
     }
     //btcProcent.id = h1cryptoprocent;
 

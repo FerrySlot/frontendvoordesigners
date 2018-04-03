@@ -45,12 +45,25 @@ h2
 	background-color: white;
 	width: 100px;
 	height: 100px;
+	border-style: solid;
+	border-width: 1px;
+	top: 0px;
 }
 .button2{
 	float: right;
 	background-color: white;
 	width: 100px;
 	height: 100px;
+	border-style: solid;
+	border-width: 1px;
+	top: 0px;
+}
+#vergelijkButton{
+	height: 50px;
+	width: 150px;
+	margin: 0 auto;
+	background-color: green;
+
 }
 
 div#cryptodiv
