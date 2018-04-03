@@ -14,45 +14,7 @@ header
 	top: 0;
 	width: 100%;
 	box-shadow: 0px 0px 35px rgba(0,0,0,0.2);
-}
-
-body select
-{
-	appearance: none;
-	-webkit-appearance: none;
-	text-align: center;
-
-	display: inline-block;
-	width: 300px;
-	height: 50px;
-	border-radius: 25px;
-	border-style: none;
-	font-size: 20px;
-	font-family: Lato;
-	color: #ccc;
-	margin: 100px;
-	text-align-last:center;
-	transition: 0.5s;
-}
-select:focus{
-	outline: none;
-}
-
-header.smallheader select
-{
-	margin-top: 10px;
-	margin-bottom: 10px; 
-	transition: 0.5s;
-}
-
-body select option{
-	text-align: center;
-}
-
-body input:focus
-{
-	outline: none;
-	color: #000;
+	height: 100px;
 }
 
 #welcometext
@@ -78,17 +40,32 @@ h2
 	font-family: Lato;
 	display: inline-block;
 }
+.button1{
+	float: left;
+	background-color: white;
+	width: 100px;
+	height: 100px;
+}
+.button2{
+	float: right;
+	background-color: white;
+	width: 100px;
+	height: 100px;
+}
 
 div#cryptodiv
 {
-	width: 900px;
-	margin: 0 auto;
+	display: inline-block;
+	width: 50vw;
+	
 	padding-top: 250px;
 	transition: 0.5s;
 }
-div#cryptodiv.pulltotop{
-	padding-top: 100px;
-	transition: 0.5s;
+div#cryptodiv2
+{
+	display: inline-block;
+	width: 49vw;
+	padding-top: 250px;
 }
 
 table
@@ -136,9 +113,4 @@ tr:nth-child(even)
 {
 	background-color: #eee;
 }
-#showBTCbutton{
-	width: 32px;
-	height: 32px;
-	background-color: white;
-	display: inline-block;
-}
+

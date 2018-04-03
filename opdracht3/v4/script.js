@@ -11,6 +11,9 @@ var cryptoResponse;
 
 var BTCopenday;
 
+var leftProcent;
+var rightProcent;
+
 requestCrypto.onload = function() 
 {
     isJSONloaded = 1;
@@ -19,45 +22,57 @@ requestCrypto.onload = function()
     //showCrypto(cryptoResponse['DISPLAY'].BTC.EUR);
 }
 
-selectCrypto.onchange = function()
+
+var showBTCbutton = document.querySelector("#showBTCbutton");
+showBTCbutton.onclick = function() 
 {
-    if(isJSONloaded == 1)
-    {
-        console.log(selectCrypto.value);
-        switch(selectCrypto.value) {
-        case "BTC":
-            showCrypto(cryptoResponse['DISPLAY'].BTC.EUR);
-        break;
-        case "ETH":
-            showCrypto(cryptoResponse['DISPLAY'].ETH.EUR);
-        break;
-        case "XRP":
-            showCrypto(cryptoResponse['DISPLAY'].XRP.EUR);
-        break;
-        case "LTC":
-            showCrypto(cryptoResponse['DISPLAY'].LTC.EUR);
-        break;
-        case "EOS":
-            showCrypto(cryptoResponse['DISPLAY'].EOS.EUR);
-        break;
-        case "ETC":
-            showCrypto(cryptoResponse['DISPLAY'].ETC.EUR);
-        break;
-        case "BCH":
-            showCrypto(cryptoResponse['DISPLAY'].BCH.EUR);
-        break;
-        case "QTUM":
-            showCrypto(cryptoResponse['DISPLAY'].QTUM.EUR);
-        break;
-        case "NEO":
-            showCrypto(cryptoResponse['DISPLAY'].NEO.EUR);
-        break;
-        case "TRX":
-            showCrypto(cryptoResponse['DISPLAY'].TRX.EUR);
-        break;
-        }
-    }
-}
+    showCrypto(cryptoResponse['DISPLAY'].BTC.EUR);
+    leftProcent = cryptoResponse['DISPLAY'].BTC.EUR.CHANGEPCT24HOUR;
+    console.log(leftProcent);
+};
+
+var showBTCbutton2 = document.querySelector("#showBTCbutton2");
+showBTCbutton2.onclick = function() 
+{
+    showCrypto2(cryptoResponse['DISPLAY'].BTC.EUR);
+    rightProcent = cryptoResponse['DISPLAY'].BTC.EUR.CHANGEPCT24HOUR;
+    console.log(rightProcent);
+};
+
+
+var showETHbutton = document.querySelector("#showETHbutton");
+showETHbutton.onclick = function() 
+{
+    showCrypto(cryptoResponse['DISPLAY'].ETH.EUR); 
+    leftProcent = cryptoResponse['DISPLAY'].ETH.EUR.CHANGEPCT24HOUR;
+    console.log(leftProcent);
+};
+
+var showETHbutton2 = document.querySelector("#showETHbutton2");
+showETHbutton2.onclick = function() 
+{
+    showCrypto2(cryptoResponse['DISPLAY'].ETH.EUR);
+    rightProcent = cryptoResponse['DISPLAY'].ETH.EUR.CHANGEPCT24HOUR;
+    console.log(rightProcent);
+};
+
+var showLTCbutton = document.querySelector("#showLTCbutton");
+showLTCbutton.onclick = function() 
+{
+    showCrypto(cryptoResponse['DISPLAY'].LTC.EUR); 
+    leftProcent = cryptoResponse['DISPLAY'].LTC.EUR.CHANGEPCT24HOUR;
+    console.log(leftProcent);
+};
+
+var showLTCbutton2 = document.querySelector("#showLTCbutton2");
+showLTCbutton2.onclick = function() 
+{
+    showCrypto2(cryptoResponse['DISPLAY'].LTC.EUR);
+    rightProcent = cryptoResponse['DISPLAY'].LTC.EUR.CHANGEPCT24HOUR;
+    console.log(rightProcent);
+};
+
+
 
 function showCrypto(jsonObj) 
 {
@@ -66,8 +81,10 @@ function showCrypto(jsonObj)
     while (resetcryptodiv.hasChildNodes()) {
         resetcryptodiv.removeChild(resetcryptodiv.firstChild);
     }
+
     var welcomediv = document.querySelector("#welcometext");
     welcomediv.classList.add("hidden");
+
     //build everything
     var cryptoarray = jsonObj;
     console.log(".size array: " + Object.keys(cryptoarray).length);
@@ -82,28 +99,57 @@ function showCrypto(jsonObj)
     cryptodiv.appendChild(btcProcent);
     //btcProcent.id = h1cryptoprocent;
 
-    var dataTable = document.createElement('table');
-    cryptodiv.appendChild(dataTable);
-
-    for (var i = 0; i < Object.keys(cryptoarray).length; i++) 
+    if(rightProcent < leftProcent)
     {
-        var infoRow = document.createElement('tr');
-        infoRow.id = Object.keys(cryptoarray)[i];
-        dataTable.appendChild(infoRow);
-
-        var infoName = document.createElement('td');
-        infoName.innerHTML = Object.keys(cryptoarray)[i];
-        infoRow.appendChild(infoName);
-
-        var infoData = document.createElement('td');
-        infoData.innerHTML = cryptoarray[Object.keys(cryptoarray)[i]];
-        infoRow.appendChild(infoData);
+        btcProcent.style.color = "green";
+    }
+    if(rightProcent > leftProcent)
+    {
+        btcProcent.style.color = "red";
     }
 
-    console.log("cryptoarray log name : " + Object.keys(cryptoarray)[3]);
-    console.log("cryptoarray log data : " + cryptoarray[Object.keys(cryptoarray)[3]]);
-    console.log("cryptoarray met punt : " + cryptoarray.PRICE);
 }
+
+function showCrypto2(jsonObj) 
+{
+    //remove everything
+    var resetcryptodiv2 = document.getElementById("cryptodiv2");
+    while (resetcryptodiv2.hasChildNodes()) {
+        resetcryptodiv2.removeChild(resetcryptodiv2.firstChild);
+    }
+
+    var welcomediv = document.querySelector("#welcometext");
+    welcomediv.classList.add("hidden");
+
+    //build everything
+    var cryptoarray = jsonObj;
+    console.log(".size array: " + Object.keys(cryptoarray).length);
+
+    var btcPrice = document.createElement('h1');
+    btcPrice.innerHTML = cryptoarray.FROMSYMBOL + " prijs:</br>" + cryptoarray.PRICE;
+    cryptodiv2.appendChild(btcPrice);
+    //btcPrive.id = h1cryptoprijs;
+
+    var btcProcent = document.createElement('h1');
+    btcProcent.innerHTML = cryptoarray.FROMSYMBOL + " procent:</br>" + cryptoarray.CHANGEPCT24HOUR;
+    cryptodiv2.appendChild(btcProcent);
+    if(rightProcent > leftProcent)
+    {
+        btcProcent.style.color = "green";
+    }
+    if(rightProcent < leftProcent)
+    {
+        btcProcent.style.color = "red";
+    }
+    //btcProcent.id = h1cryptoprocent;
+
+}
+
+
+
+
+
+
 
 // Als de user scrollt
 window.addEventListener("scroll", function(event) 
