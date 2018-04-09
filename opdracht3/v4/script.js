@@ -33,14 +33,7 @@ showBTCbutton.onclick = function()
     leftProcent = cryptoResponse['DISPLAY'].BTC.EUR.CHANGEPCT24HOUR;
     console.log(leftProcent);
     showCrypto(cryptoResponse['DISPLAY'].BTC.EUR);
-};
-
-var showBTCbutton2 = document.querySelector("#showBTCbutton2");
-showBTCbutton2.onclick = function() 
-{
-    rightProcent = cryptoResponse['DISPLAY'].BTC.EUR.CHANGEPCT24HOUR;
-    console.log(rightProcent);
-    showCrypto2(cryptoResponse['DISPLAY'].BTC.EUR);
+    showStep2();
 };
 
 var showETHbutton = document.querySelector("#showETHbutton");
@@ -49,14 +42,7 @@ showETHbutton.onclick = function()
     leftProcent = cryptoResponse['DISPLAY'].ETH.EUR.CHANGEPCT24HOUR;
     console.log(leftProcent);
     showCrypto(cryptoResponse['DISPLAY'].ETH.EUR); 
-};
-
-var showETHbutton2 = document.querySelector("#showETHbutton2");
-showETHbutton2.onclick = function() 
-{
-    rightProcent = cryptoResponse['DISPLAY'].ETH.EUR.CHANGEPCT24HOUR;
-    console.log(rightProcent);
-    showCrypto2(cryptoResponse['DISPLAY'].ETH.EUR);
+    showStep2();
 };
 
 var showLTCbutton = document.querySelector("#showLTCbutton");
@@ -65,6 +51,7 @@ showLTCbutton.onclick = function()
     leftProcent = cryptoResponse['DISPLAY'].LTC.EUR.CHANGEPCT24HOUR;
     console.log(leftProcent);
     showCrypto(cryptoResponse['DISPLAY'].LTC.EUR); 
+    showStep2();
 };
 
 var showLTCbutton2 = document.querySelector("#showLTCbutton2");
@@ -73,6 +60,25 @@ showLTCbutton2.onclick = function()
     rightProcent = cryptoResponse['DISPLAY'].LTC.EUR.CHANGEPCT24HOUR;
     console.log(rightProcent);
     showCrypto2(cryptoResponse['DISPLAY'].LTC.EUR);
+    showStep3();
+};
+
+var showBTCbutton2 = document.querySelector("#showBTCbutton2");
+showBTCbutton2.onclick = function() 
+{
+    rightProcent = cryptoResponse['DISPLAY'].BTC.EUR.CHANGEPCT24HOUR;
+    console.log(rightProcent);
+    showCrypto2(cryptoResponse['DISPLAY'].BTC.EUR);
+    showStep3();
+};
+
+var showETHbutton2 = document.querySelector("#showETHbutton2");
+showETHbutton2.onclick = function() 
+{
+    rightProcent = cryptoResponse['DISPLAY'].ETH.EUR.CHANGEPCT24HOUR;
+    console.log(rightProcent);
+    showCrypto2(cryptoResponse['DISPLAY'].ETH.EUR);
+    showStep3();
 };
 
 
@@ -103,8 +109,27 @@ vergelijkButton.onclick = function()
     {
         btcProcentRight.style.color = "black";
     }
+    var headerElement = document.querySelector("header");
+    headerElement.classList.add("smallheader");
+    vergelijkButton.classList.add("notactiveleft");
 }
 
+function showStep2()
+{
+    var stap1 = document.querySelector("#stap1");
+    stap1.classList.add("notactiveleft");
+
+    var stap2 = document.querySelector("#stap2");
+    stap2.classList.remove("notactiveright");
+
+}
+function showStep3()
+{
+    var step2 = document.querySelector("#stap2");
+    step2.classList.add("hidden");
+
+    vergelijkButton.classList.remove("notactiveright");
+}
 
 function showCrypto(jsonObj) 
 {
@@ -170,7 +195,7 @@ function showCrypto2(jsonObj)
     }
 }
 
-
+/*
 // Als de user scrollt
 window.addEventListener("scroll", function(event) 
 {
@@ -192,3 +217,4 @@ window.addEventListener("scroll", function(event)
         cryptodiv.classList.remove("pulltotop");
     }
 })
+*/

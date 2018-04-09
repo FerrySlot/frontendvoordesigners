@@ -11,11 +11,16 @@ body
 header
 {
 	background-color: green;
-	position: fixed;
+	/*position: fixed;*/
 	top: 0;
 	width: 100%;
 	box-shadow: 0px 0px 35px rgba(0,0,0,0.2);
-	height: 100px;
+	height: 100vh;
+	transition: 1s;
+}
+header.smallheader{
+	height: 12vh;
+	transition: 1s;
 }
 
 #welcometext
@@ -40,6 +45,7 @@ h2
 	text-align: center;
 	font-family: Lato;
 	display: inline-block;
+	color: #fff;
 }
 #welcometext h1{
 	width: 49%;
@@ -65,13 +71,13 @@ h2
 	background-color: #fff;
 }
 #showETHbutton, #showETHbutton2{
-	background-color: #eee;
+	background-color: #fff;
 }
 #showLTCbutton, #showLTCbutton2{
-	background-color: #ddd;
+	background-color: #fff;
 }
 .button2{
-	float: right;
+	float: left;
 	background-color: white;
 	width: 50px;
 	height: 50px;
@@ -82,11 +88,25 @@ h2
 	margin: 25px;
 	cursor: pointer;
 }
+#stap1{
+	position: absolute;
+	top: 35%;
+	width: 300px;
+	left: calc(50% - 150px);
+	transition: 1s;
+}
+#stap2{
+	position: absolute;
+	top: 35%;
+	width: 300px;
+	left: calc(50% - 150px);
+	transition: 1s;
+}
 #vergelijkButton{
 	height: 50px;
 	width: 150px;
 	margin: 0 auto;
-	margin-top: 25px;
+	top: 35%;
 	background-color: white;
 	position: absolute;
 	left: calc(50% - 75px);
@@ -96,21 +116,33 @@ h2
 	line-height: 50px;
 	text-align: center;
 	cursor: pointer;
+	transition: 1s;
+}
+.notactiveleft{
+	transition: 1s;
+	left: -1500px !important;
+}
+.notactiveright{
+	transition: 1s;
+	left: 3500px !important;
 }
 
 div#cryptodiv
 {
 	display: inline-block;
 	width: 50vw;
+	height: 100vh;
 	
-	padding-top: 250px;
+	/*padding-top: 250px;*/
 	transition: 0.5s;
 }
 div#cryptodiv2
 {
 	display: inline-block;
+	height: 100vh;
 	width: 49vw;
-	padding-top: 250px;
+
+	/*padding-top: 250px;*/
 }
 
 table
