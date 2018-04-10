@@ -30,12 +30,8 @@ Deze demo heeft een extra functie gekregen.
 Hier kan de gebruiker stapsgewijs twee currencies selecteren en bekijken welke het meest gestegen is. De gebruiker krijgt feedback doormiddel van kleur.
 
 De tool is opgezet in 4 fases, stap 1: Het kiezen van je eerste crypto.
-[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht3/images/coinchange_stap1.png "stap 1"
 
-Preview van de pop-up: 
-
-![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht3/images/coinchange_stap1.png "Preview pop-up v1")
-
+Voordat er iets gaat gebeuren wordt eerst de JSON geladen d.m.v. deze code:
 
 ```javascript
 var requestCryptoURL = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,LTC,EOS,ETC,BCH,QTUM,NEO,TRX&tsyms=EUR,USD'; // De URL waar je de JSON van laadt
@@ -53,3 +49,35 @@ requestCrypto.onload = function()
 }
 
 ```
+
+
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht3/images/coinchange_stap1.png "stap 1"
+
+Stap 1: Het kiezen van crypto currency A.
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht3/images/coinchange_stap1.png "Preview pop-up v1")
+
+
+
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht3/images/coinchange_stap2.png "stap 2"
+
+Stap 2: Het kiezen van crypto currency B.
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht3/images/coinchange_stap2.png "Preview pop-up v1")
+
+
+
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht3/images/coinchange_stap3.png "stap 3"
+
+Stap 3: Laat de tool berekenen welke currency meer gestegen is.
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht3/images/coinchange_stap3.png "Preview pop-up v1")
+
+
+
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht3/images/coinchange_result.png "Result"
+
+Stap 4: Het resultaat komt naar boven sliden. De percentage die het hoogst is wordt groen, en de percentage die het laagst is wordt rood.
+Helaas zit er nog 1 bug in. Het getal dat wordt ingeladen via de API is geen "min getal", het is een getal met een streepje er voor. Hierdoor wordt het streepje genegeerd, en wordt het getal dat het meest gedaalt is ook wel eens groen.
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht3/images/coinchange_result.png "Preview pop-up v1")
