@@ -31,18 +31,18 @@ Hier kan de gebruiker stapsgewijs twee currencies selecteren en bekijken welke h
 
 
 ```javascript
-var requestCryptoURL = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,LTC,EOS,ETC,BCH,QTUM,NEO,TRX&tsyms=EUR,USD';
-var requestCrypto = new XMLHttpRequest();
-requestCrypto.open('GET', requestCryptoURL);
-requestCrypto.responseType = 'json';
-requestCrypto.send();
+var requestCryptoURL = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,LTC,EOS,ETC,BCH,QTUM,NEO,TRX&tsyms=EUR,USD'; // De URL waar je de JSON van laadt
+var requestCrypto = new XMLHttpRequest(); //shortcut maken van de request
+requestCrypto.open('GET', requestCryptoURL); // open de json file
+requestCrypto.responseType = 'json'; // zeg dat t json is
+requestCrypto.send(); // verstuur de data
 
 var isJSONloaded = 0;
 
 requestCrypto.onload = function() 
 {
-    isJSONloaded = 1;
-    cryptoResponse = requestCrypto.response;
+    isJSONloaded = 1; // voor verder in de code, dan weet je zeker dat t geladen is.
+    cryptoResponse = requestCrypto.response; // de response opslaan
 }
 
 ```
