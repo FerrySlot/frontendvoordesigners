@@ -5,7 +5,4 @@ Bijvoorbeel bij de demo van versie in kun je zo een link maken, zodat iedereen d
 
 [Demo 1 voor opdracht 1](https://ferryslot.github.io/frontendvoordesigners/opdracht1/v1/)
 
-[Demo 2 voor opdracht 1](https://ferryslot.github.io/frontendvoordesigners/opdracht1/v2/)
-
-[Demo 3 voor opdracht 1](https://ferryslot.github.io/frontendvoordesigners/opdracht1/v3/)
 
