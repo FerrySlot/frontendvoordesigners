@@ -29,6 +29,13 @@ Demo 4:
 Deze demo heeft een extra functie gekregen.
 Hier kan de gebruiker stapsgewijs twee currencies selecteren en bekijken welke het meest gestegen is. De gebruiker krijgt feedback doormiddel van kleur.
 
+De tool is opgezet in 4 fases, stap 1: Het kiezen van je eerste crypto.
+[preview]: https://ferryslot.github.io/frontendvoordesigners/opdracht3/images/coinchange_stap1.png "stap 1"
+
+Preview van de pop-up: 
+
+![alt text](https://raw.githubusercontent.com/FerrySlot/frontendvoordesigners/master/opdracht3/images/coinchange_stap1.png "Preview pop-up v1")
+
 
 ```javascript
 var requestCryptoURL = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,LTC,EOS,ETC,BCH,QTUM,NEO,TRX&tsyms=EUR,USD'; // De URL waar je de JSON van laadt
