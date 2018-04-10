@@ -28,3 +28,21 @@ Demo 4:
 
 Deze demo heeft een extra functie gekregen.
 Hier kan de gebruiker stapsgewijs twee currencies selecteren en bekijken welke het meest gestegen is. De gebruiker krijgt feedback doormiddel van kleur.
+
+
+```javascript
+var requestCryptoURL = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,LTC,EOS,ETC,BCH,QTUM,NEO,TRX&tsyms=EUR,USD';
+var requestCrypto = new XMLHttpRequest();
+requestCrypto.open('GET', requestCryptoURL);
+requestCrypto.responseType = 'json';
+requestCrypto.send();
+
+var isJSONloaded = 0;
+
+requestCrypto.onload = function() 
+{
+    isJSONloaded = 1;
+    cryptoResponse = requestCrypto.response;
+}
+
+```
