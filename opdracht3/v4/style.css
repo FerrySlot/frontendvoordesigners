@@ -11,7 +11,8 @@ body
 }
 header
 {
-	background-color: green;
+	background-color: #21409A; 
+	background: linear-gradient(#000A4C, #21409A); 
 	/*position: fixed;*/
 	top: 0;
 	width: 100%;
@@ -22,6 +23,11 @@ header
 header.smallheader{
 	height: 12vh;
 	transition: 1s;
+}
+
+header img{
+	width: 300px;
+	padding-top: 12px;
 }
 
 #welcometext
