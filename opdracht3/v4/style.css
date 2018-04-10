@@ -68,6 +68,10 @@ h2
 	margin: 25px;
 	cursor: pointer;
 }
+.button1:hover
+{
+	box-shadow: 0px 0px 20px rgba(255,255,255,0.5);
+}
 #showBTCbutton, #showBTCbutton2{
 	background-color: #fff;
 }
@@ -88,6 +92,10 @@ h2
 	line-height: 50px;
 	margin: 25px;
 	cursor: pointer;
+}
+.button2:hover
+{
+	box-shadow: 0px 0px 20px rgba(255,255,255,0.5);
 }
 #stap1{
 	position: absolute;
